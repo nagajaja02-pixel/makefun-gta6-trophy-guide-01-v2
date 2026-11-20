@@ -1,0 +1,228 @@
+/* Leonida Trophy Guide — dark Vice City design, system fonts only, no network. */
+:root {
+  --bg: #0d0a14;
+  --bg-soft: #171226;
+  --card: #1c1530;
+  --card-earned: #14261c;
+  --line: #2e2447;
+  --text: #f2eefb;
+  --muted: #b3a8cc;
+  --pink: #ff5e8a;
+  --cyan: #39d5e8;
+  --gold: #ffc44d;
+  --silver: #c9d2dc;
+  --bronze: #d08a4e;
+  --platinum: #7de8ff;
+  --good: #4ade80;
+  --warn: #ffb020;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: "Segoe UI", system-ui, -apple-system, "Helvetica Neue", Arial, sans-serif;
+  line-height: 1.55;
+}
+
+.hero {
+  padding: 28px 24px 20px;
+  background:
+    linear-gradient(180deg, rgba(255, 94, 138, 0.22), rgba(57, 213, 232, 0.10) 55%, transparent),
+    var(--bg-soft);
+  border-bottom: 1px solid var(--line);
+}
+
+.kicker {
+  margin: 0 0 6px;
+  color: var(--cyan);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+h1 {
+  margin: 0 0 8px;
+  font-size: 40px;
+  line-height: 1.05;
+  letter-spacing: -0.01em;
+}
+
+.lede { max-width: 860px; margin: 0 0 16px; color: var(--muted); font-size: 16px; }
+.lede span { color: var(--text); }
+
+.progress { max-width: 860px; }
+.progress-top {
+  display: flex;
+  justify-content: space-between;
+  font-size: 15px;
+}
+.bar {
+  height: 12px;
+  margin-top: 6px;
+  border-radius: 999px;
+  background: #241c3a;
+  overflow: hidden;
+}
+.bar-fill {
+  height: 100%;
+  border-radius: 999px;
+  background: linear-gradient(90deg, var(--pink), var(--cyan));
+  transition: width 0.25s ease;
+}
+.progress-grades { margin: 8px 0 0; color: var(--muted); font-size: 13px; }
+
+.controls {
+  position: sticky;
+  top: 0;
+  z-index: 5;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 14px;
+  align-items: end;
+  padding: 12px 24px;
+  background: rgba(13, 10, 20, 0.96);
+  border-bottom: 1px solid var(--line);
+}
+.ctl { display: flex; flex-direction: column; gap: 4px; font-size: 12px; color: var(--muted); }
+.ctl.search { flex: 1 1 220px; }
+.ctl input[type="search"], .ctl select {
+  padding: 8px 10px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--bg-soft);
+  color: var(--text);
+  font: inherit;
+  font-size: 14px;
+}
+.ctl.check { flex-direction: row; align-items: center; gap: 6px; font-size: 14px; color: var(--text); }
+.ctl.check input { width: 16px; height: 16px; accent-color: var(--pink); }
+.ctl.actions { flex-direction: row; align-items: center; gap: 8px; }
+button, .import-btn {
+  padding: 8px 12px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--bg-soft);
+  color: var(--text);
+  font: inherit;
+  font-size: 14px;
+  cursor: pointer;
+}
+button:hover, .import-btn:hover { border-color: var(--cyan); }
+.import-btn input { display: none; }
+.count-line { margin: 10px 24px 0; color: var(--muted); font-size: 13px; }
+
+main { padding: 8px 24px 24px; max-width: 1100px; }
+#cards { display: grid; gap: 12px; margin-top: 12px; }
+.empty { color: var(--muted); }
+
+.card {
+  display: flex;
+  gap: 16px;
+  padding: 14px 16px;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: var(--card);
+}
+.card.earned { background: var(--card-earned); border-color: #245c38; }
+.card.spoiler-hidden { border-style: dashed; }
+.tick {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  min-width: 52px;
+  padding-top: 4px;
+  font-size: 12px;
+  color: var(--muted);
+  cursor: pointer;
+}
+.tick input { width: 22px; height: 22px; accent-color: var(--good); cursor: pointer; }
+.card-body { flex: 1; min-width: 0; }
+.card-top { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; }
+.badge {
+  padding: 2px 8px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+.badge.grade-platinum { background: #12303a; color: var(--platinum); }
+.badge.grade-gold { background: #3a2c10; color: var(--gold); }
+.badge.grade-silver { background: #2c313a; color: var(--silver); }
+.badge.grade-bronze { background: #3a2415; color: var(--bronze); }
+.tag {
+  padding: 2px 8px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  font-size: 12px;
+  color: var(--muted);
+}
+.flag-missable, .flag-spoiler {
+  padding: 2px 8px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 700;
+}
+.flag-missable { background: #3a2a08; color: var(--warn); }
+.flag-spoiler { background: #2a1a3a; color: #c9a6ff; }
+.card h3 { margin: 8px 0 2px; font-size: 19px; }
+.desc { margin: 0 0 8px; color: var(--muted); }
+.guide-toggle {
+  margin: 2px 0 0;
+  padding: 6px 10px;
+  border-color: var(--cyan);
+  color: var(--cyan);
+  background: transparent;
+  font-size: 13px;
+}
+.guide { margin-top: 10px; padding-top: 10px; border-top: 1px dashed var(--line); }
+.guide p { margin: 0 0 8px; }
+.missable-note { color: var(--warn); }
+.sources { color: var(--muted); font-size: 13px; }
+
+section h2 { margin: 32px 0 6px; font-size: 26px; }
+.section-note { color: var(--muted); max-width: 860px; }
+.stages { list-style: none; margin: 12px 0 0; padding: 0; display: grid; gap: 12px; }
+.stages li {
+  padding: 14px 16px;
+  border: 1px solid var(--line);
+  border-left: 4px solid var(--pink);
+  border-radius: 12px;
+  background: var(--card);
+}
+.stages h3 { margin: 0 0 2px; font-size: 18px; }
+.stage-meta { margin: 0 0 6px; color: var(--cyan); font-size: 13px; font-weight: 700; }
+.stages p:last-child { margin: 0; }
+#watch-cards { display: grid; gap: 12px; margin-top: 12px; }
+.watch-card {
+  padding: 14px 16px;
+  border: 1px solid #4a3408;
+  border-radius: 12px;
+  background: #241a08;
+}
+.watch-card h3 { margin: 0 0 4px; font-size: 17px; }
+.watch-card p { margin: 0 0 6px; }
+.watch-card p:last-child { margin: 0; }
+.watch-guide { color: var(--muted); }
+
+footer {
+  max-width: 1100px;
+  padding: 8px 24px 40px;
+  color: var(--muted);
+}
+footer h2 { color: var(--text); font-size: 22px; }
+footer h3 { color: var(--text); font-size: 16px; }
+footer ul { padding-left: 20px; }
+.fine { font-size: 13px; }
+
+@media (max-width: 720px) {
+  h1 { font-size: 30px; }
+  .hero, .controls, main, footer { padding-left: 14px; padding-right: 14px; }
+  .card { gap: 10px; padding: 12px; }
+  .tick { min-width: 40px; }
+}

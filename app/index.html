@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Leonida Trophy Guide — GTA VI, all 55 trophies</title>
+<meta name="description" content="A free offline guide and tracker for all 55 Grand Theft Auto VI trophies on PlayStation 5: every trophy with a guide in plain words, a roadmap to the platinum, missable flags and a spoiler setting.">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="hero">
+  <p class="kicker">Grand Theft Auto VI &middot; PlayStation 5 &middot; offline guide</p>
+  <h1>Leonida Trophy Guide</h1>
+  <p class="lede">Every one of the 55 official trophies, with a guide in plain words, a roadmap to the
+  platinum, and a checklist that remembers what you have earned. No account, no network, no
+  tracking. <span id="release-note"></span></p>
+  <div class="progress" id="progress" aria-live="polite">
+    <div class="progress-top"><strong id="progress-count">0 of 55 earned</strong><span id="progress-pct">0%</span></div>
+    <div class="bar"><div class="bar-fill" id="progress-fill" style="width:0%"></div></div>
+    <p class="progress-grades" id="progress-grades"></p>
+  </div>
+</header>
+
+<nav class="controls" aria-label="Trophy filters">
+  <label class="ctl search">Search
+    <input id="q" type="search" placeholder="Name or description&hellip;" autocomplete="off">
+  </label>
+  <label class="ctl">Grade
+    <select id="grade">
+      <option value="all">All grades</option>
+      <option value="platinum">Platinum</option>
+      <option value="gold">Gold</option>
+      <option value="silver">Silver</option>
+      <option value="bronze">Bronze</option>
+    </select>
+  </label>
+  <label class="ctl">Kind
+    <select id="kind">
+      <option value="all">All kinds</option>
+      <option value="story">Story</option>
+      <option value="collectible">Collectibles</option>
+      <option value="activity">Activities</option>
+    </select>
+  </label>
+  <label class="ctl">Status
+    <select id="status">
+      <option value="all">Earned &amp; missing</option>
+      <option value="missing">Missing only</option>
+      <option value="earned">Earned only</option>
+    </select>
+  </label>
+  <label class="ctl check"><input id="missable-only" type="checkbox"> Missable only</label>
+  <label class="ctl check spoiler"><input id="spoiler" type="checkbox" checked> Hide story spoilers</label>
+  <span class="ctl actions">
+    <button id="export" type="button">Export progress</button>
+    <label class="import-btn">Import progress <input id="import" type="file" accept="application/json,.json"></label>
+    <button id="reset" type="button">Reset</button>
+  </span>
+</nav>
+<p class="count-line" id="count-line"></p>
+
+<main>
+  <section id="list" aria-label="Trophy list">
+    <div id="cards"></div>
+    <p id="empty" class="empty" hidden>No trophies match these filters. Clear the search or widen a filter.</p>
+  </section>
+
+  <section id="roadmap" aria-label="Roadmap to the platinum">
+    <h2>Roadmap to the platinum</h2>
+    <p class="section-note">Built from the official descriptions: which story chapters and missions, which
+    collectibles and counts, in what order. Nothing here is missable in the hard sense — story
+    missions can be replayed and every activity repeats — but the five trophies in the watchlist
+    below deserve a heads-up.</p>
+    <ol class="stages" id="stages"></ol>
+  </section>
+
+  <section id="watchlist" aria-label="Missable trophies to watch">
+    <h2>Missable watchlist</h2>
+    <p class="section-note">Five trophies whose moment is easy to walk past or depends on a choice. The rest
+    can be earned at any point after they unlock.</p>
+    <div id="watch-cards"></div>
+  </section>
+</main>
+
+<footer>
+  <h2>About this guide</h2>
+  <p id="honesty"></p>
+  <h3>Sources</h3>
+  <ul id="sources"></ul>
+  <p class="fine">A fan-made guide. Grand Theft Auto, GTA, Vice City and Leonida are trademarks of
+  Take-Two Interactive / Rockstar Games; this guide is not affiliated with or endorsed by them, and
+  it uses no Rockstar logo, artwork or game screenshots. Trophy names and descriptions are shown as
+  PlayStation publishes them; every guide is written in our own words.</p>
+</footer>
+
+<script type="module" src="app.js"></script>
+</body>
+</html>

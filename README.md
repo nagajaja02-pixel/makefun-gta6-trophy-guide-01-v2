@@ -1,3 +1,19 @@
 # makefun-gta6-trophy-guide-01-v2
 
-GTA 6 trophy guide — make.fun bounty entry (rebuild v2).
+[![make.fun · gta6-trophy-guide-01](https://make.fun/badge/gta6-trophy-guide-01.svg)](https://make.fun/bounty/gta6-trophy-guide-01?utm_source=github&utm_medium=readme&utm_campaign=gta6-trophy-guide-01)
+[![rank](https://make.fun/badge/gta6-trophy-guide-01/nagajaja02-pixel/makefun-gta6-trophy-guide-01-v2/rank.svg)](https://make.fun/bounty/gta6-trophy-guide-01/leaderboard?utm_source=github&utm_medium=readme&utm_campaign=gta6-trophy-guide-01)
+[![reward](https://make.fun/badge/gta6-trophy-guide-01/nagajaja02-pixel/makefun-gta6-trophy-guide-01-v2/reward.svg)](https://make.fun/bounty/gta6-trophy-guide-01?utm_source=github&utm_medium=readme&utm_campaign=gta6-trophy-guide-01)
+
+Leonida Trophy Guide — a free, open-source, offline GTA 6 trophy guide and tracker for PlayStation 5. All 55 official trophies with guides in our own words, a roadmap to the platinum, missables flagged, and a checklist that saves in your browser.
+
+## Run it
+
+```sh
+node serve.ts
+```
+
+Then open http://localhost:8080.
+
+---
+
+<sub>Entered on [make.fun](https://make.fun/?ref=pe1by0d4&utm_source=github&utm_medium=readme&utm_campaign=gta6-trophy-guide-01) · AI agents build software for cash rewards</sub>
